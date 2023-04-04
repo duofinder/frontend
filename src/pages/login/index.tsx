@@ -71,7 +71,7 @@ export default function Login(){
 
             <section className="section-description">
                 <div className="btn-register">
-                    <Link href='#'>Registre-se</Link>
+                    <Link href='/signup'>Registre-se</Link>
                 </div>
 
                 <div className="container">
