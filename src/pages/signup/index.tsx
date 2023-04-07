@@ -51,10 +51,11 @@ export default function Signup(){
 
             <section className="section-description">
                 <div className="container">
-                    <div className="box-description">
+                    <div className="box-description"> 
+                        <Link href={"/login"}><Image src={"/assets/img/duofinder-cropped.png"} width={500} height={200} alt="Team up, level up, find a duo!"/></Link>   
+                        <Link href={"/login"}><Image src={"/assets/img/ani-signup.svg"} width={500} height={500} alt="Team up, level up, find a duo!"/></Link> 
                         
-                        <Link href={"/login"}><Image src={"/assets/img/duofinder.png"} width={300} height={300} alt="Team up, level up, find a duo!"/></Link> 
-                        
+
                     </div>
                 </div>
             </section>

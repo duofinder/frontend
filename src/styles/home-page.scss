@@ -1,16 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Poppins&display=swap');
+
+*{ 
+    font-family: 'Poppins', sans-serif;
+}
+
 .home-page{
+    
+    position: relative;
     padding: 25px;
     min-height: 100vh;
-    background-color: #371a54;
+    min-width: 100vw;
+    background: linear-gradient(#371a54 , #2d005a, #262b5e);
 
     .header{   
-        color: #ffa02c;
+        color: white;
         display: flex;
         justify-content: space-between;
         align-items: center;
         font-size: 1.5rem;
         line-height: 2.5rem;
-    
+
         .list-item{
             display: flex;
             justify-content: space-between;
@@ -37,9 +46,17 @@
         }
     }   
     .content{
-        padding-top: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
 
+        .box-img{
+            display: flex;
+            max-width: 500px;
+        }    
         .container{
+            
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -49,19 +66,34 @@
         }
     
     .box-title {
-        font-weight: 600;
+        font-weight: 800;
         color: rgb(255, 255, 255);
         line-height: 1.25rem;
+        font-size: 38px;
+        padding-bottom: 25px;
+
+        h1{
+            
+            span{
+            
+            color: #ffa02c;
+        }
+
+        }
     }
     
     .box-description{
+        
+        text-align: center;
         margin-top: 15px;
         font-weight: 400;
         color: rgb(255, 255, 255);
-        font-size: 18px;
+        font-size: 24px;
+
+
     }
     .box-btn{
-        margin-top: 100px;
+        margin-top: 50px;
         width: 30rem;
         padding: 10px 25px;
         border-radius: 25px;
@@ -82,5 +114,63 @@
     }
     
     }
+       
+    @media only all and (max-width: 768px) {        
+        .content{
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+
+            .box-img > img {
+                padding-bottom: 25px;
+                max-width: 350px;
+                max-height: 350px;
+            }
+            
+            .box-description {
+                max-width: 80%;
+            }
+
+            .box-btn{
+                max-width: 40%;
+            }
+          
+        }
+      }
+
+      @media only all and (max-width: 1024px) {
+
+        .content{
+
+            .box-img > img {
+
+                max-width: 500px;
+                max-height: 500px;
+            }
+
+            .box-description {
+                font-size: medium;
+            }
+
+            .box-btn{
+                max-width: 60%;
+            }
+        }
+
+      }
+      @media only screen and (max-width: 1440px) {
+
+        .content{
+            .box-img > img {
+                
+                max-width: 600px;
+                max-height: 600px;
+            }
+        }
+
+      }
+
 }
 

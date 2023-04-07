@@ -5,7 +5,8 @@ function Home() {
     
     <main className='home-page'>
         <header className='header'>
-          <img src="/assets/img/duofinder-cropped.png" width={300} height={100} alt="Team up!" />
+        <img src="/assets/img/duofinder-cropped.png" width={300} height={90} alt="Team up!" />
+          
         <ul className='list'>
               <li className='list-item'>
                 <Link className='btn-about' href="/about">Sobre</Link>
@@ -13,15 +14,21 @@ function Home() {
         </ul>
         </header>
         <section className='content'>
+
+              <div className='box-img'>
+                <img src="/assets/img/animationlaranja.svg" width={800} height={800} alt="Team up!" /> 
+              </div>
+
           <div className="container">
+         
             <div className="box-title">
-                <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero nisi facere eos ratione porro modi nostrum necessitatibus eligendi excepturi esse? Praesentium velit dicta vel accusamus dolor sit at error! Error.</h2>
+              <h1>DUO<span>FINDER</span></h1>    
             </div>
+
             <div className="box-description">
-                <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, esse consectetur. Nam eum blanditiis quidem autem, dolorem recusandae a magnam delectus similique. Suscipit tempore obcaecati illo, ab exercitationem illum ipsam.   
-                </p>      
-            </div>
+                <p> Duofinder é um site essencial para jogadores que procuram um parceiro de jogo compatível. <br/> <br/>Com sua plataforma de busca fácil de usar, categorias de jogos populares, seção de destaque e comunidade confiável, este site é a solução ideal para encontrar um duo para os jogos que você tanto ama.</p>      
+            </div> 
+
 
             <div className="box-btn">
             <Link className='log-link' href="/login">Encontre seu duo!</Link>
