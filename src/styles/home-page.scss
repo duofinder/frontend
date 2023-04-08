@@ -1,176 +1,240 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Poppins&display=swap');
-
-*{ 
-    font-family: 'Poppins', sans-serif;
-}
-
 .home-page{
-    
     position: relative;
     padding: 25px;
     min-height: 100vh;
-    min-width: 100vw;
     background: linear-gradient(#371a54 , #2d005a, #262b5e);
-
-    .header{   
-        color: white;
+    
+    .container{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: 1.5rem;
-        line-height: 2.5rem;
+        gap: 10px;
+
+        width: 100%;
+        max-width: 1800px;
+        margin: 0 auto;
+    }
+
+    .header{   
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        position: relative;
 
         .list-item{
             display: flex;
             justify-content: space-between;
             border: 15px;
-            padding: 0px 45px;
             border-radius: 25px;
-             
     
-            .btn-about{
+            .btn-link{
                 font-weight: 600;
                 text-decoration: none;
                 background-color: #ffa02c;
                 color: white;
                 border: 15px;
-                padding: 0px 45px;
-                border-radius: 25px; 
-    
+                border-radius: 25px;
+                padding: 8px 65px; 
+
                 &:hover{
                     background-color: #ffa02ce5;
         
                 }
             }
+        }
+
+        .menu-hamburguer{
+            display: none;
+        }
+
+        .menu-mobile{
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        @media(max-width: 768px){
+            .menu-hamburguer{
+                position: absolute;
+                top: 20px;
+                right: 0;
     
+                display: flex;
+                width: 35px;
+                background-color: unset;
+                border: 0;
+
+            }
+
+            .hamburguer-btn, .hamburguer-close-btn{
+                position: absolute;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                opacity: 1;
+                
+                .line{
+                    transition: all 0.2s ease-in-out;
+                    width: 100%;
+                    height: 2px;
+                    background-color: #ffa02c;
+
+                    &:nth-of-type(2){
+                        margin-left: auto;
+                    }
+                }
+            }
+
+            .hamburguer-close-btn{
+                opacity: 0;
+            }
+
+            .menu-mobile{
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 0;
+                opacity: 0;
+                pointer-events: none;
+                transition: height 0.2s ease-in-out;
+            }
+
+            &.active{
+                .hamburguer-btn{
+                    opacity: 0;
+
+                    .line{
+                        width: 0;
+                    }
+                }
+
+                .hamburguer-close-btn{
+                    opacity: 1;
+                    position: absolute;
+                    height: 30px;
+                    z-index: 10;
+
+                    .line{
+                        transition: all 0.3s ease-in-out;
+                        &:nth-of-type(1){
+                            position: absolute;
+                            top: 50%;
+                            transform: rotate(45deg);
+                        }
+                        &:nth-of-type(2){
+                            display: none;
+                        }
+                        &:nth-of-type(3){
+                            position: absolute;
+                            top: 50%;
+                            transform: rotate(135deg);
+                        }
+                    }
+                }
+
+                .menu-mobile{
+                    transition: height 0.2s ease-in-out;
+                    background-color: #371a54;
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    opacity: 1;
+                    pointer-events: all;
+
+                    .list{
+                        position: absolute;
+                        top: 120px;
+                        left: 20px;
+
+                        .list-item{
+                            .btn-link{
+                                background-color: unset;
+                                padding: 0;
+                                font-size: 1.375rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .menu{
+                display: none;
+            }
         }
     }   
-    .content{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
+
+    .section-content{
+        width: 100%;
+        padding-top: 150px;
+    
+        .content{
+            width: 100%;
+            max-width: 600px;
+        }
 
         .box-img{
             display: flex;
-            max-width: 500px;
-        }    
-        .container{
-            
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
             width: 100%;
             max-width: 700px;
-            margin: 0 auto;
+
+            img{
+                width: 100%;
+            }
         }
     
-    .box-title {
-        font-weight: 800;
-        color: rgb(255, 255, 255);
-        line-height: 1.25rem;
-        font-size: 38px;
-        padding-bottom: 25px;
-
-        h1{
-            
-            span{
-            
-            color: #ffa02c;
-        }
-
-        }
-    }
-    
-    .box-description{
-        
-        text-align: center;
-        margin-top: 15px;
-        font-weight: 400;
-        color: rgb(255, 255, 255);
-        font-size: 24px;
-
-
-    }
-    .box-btn{
-        margin-top: 50px;
-        width: 30rem;
-        padding: 10px 25px;
-        border-radius: 25px;
-        background-color: #ffa02c;
-    
-        &:hover{
-        background-color: #ffa02ce5;
-        
-        }
-    
-        .log-link {
-            font-weight: 600;
-            text-decoration: none;
+        .box-title {
+            font-weight: 800;
             color: white;
-            display: flex;
-            justify-content: center;
+
+            h1{
+                text-align: center;
+                font-size: 3.125rem;
+                span{
+                    color: #ffa02c;
+                }
+            }
         }
-    }
     
+        .box-description{
+            text-align: center;
+            margin-top: 15px;
+            font-weight: 400;
+            color: rgb(255, 255, 255);
+            font-size: 24px;
+        }
+
+        .box-btn{
+            width: 100%;
+            max-width: 250px;
+
+            margin: 50px auto 0;
+            border-radius: 25px;
+            background-color: #ffa02c;
+
+            &:hover{
+                background-color: #ffa02ce5;
+            }
+        
+            .log-link {
+                padding: 8px 0;
+                font-weight: 600;
+                text-decoration: none;
+                color: white;
+                display: flex;
+                justify-content: center;
+            }
+        }
     }
        
-    @media only all and (max-width: 768px) {        
-        .content{
-            
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            
+    @media(max-width: 768px) {        
+        .section-content{
+            padding-top: 20px;
 
-            .box-img > img {
-                padding-bottom: 25px;
-                max-width: 350px;
-                max-height: 350px;
-            }
-            
-            .box-description {
-                max-width: 80%;
-            }
-
-            .box-btn{
-                max-width: 40%;
-            }
-          
-        }
-      }
-
-      @media only all and (max-width: 1024px) {
-
-        .content{
-
-            .box-img > img {
-
-                max-width: 500px;
-                max-height: 500px;
-            }
-
-            .box-description {
-                font-size: medium;
-            }
-
-            .box-btn{
-                max-width: 60%;
+            .container{
+                flex-direction: column;
             }
         }
-
-      }
-      @media only screen and (max-width: 1440px) {
-
-        .content{
-            .box-img > img {
-                
-                max-width: 600px;
-                max-height: 600px;
-            }
-        }
-
-      }
-
+    }
 }
-

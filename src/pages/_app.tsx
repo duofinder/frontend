@@ -1,7 +1,4 @@
-import '../styles/login-page.scss'
-import '../styles/globals.scss'
-import '../styles/signup-page.scss'
-import '../styles/home-page.scss'
+import '../styles/index.scss'
 import type { AppProps } from 'next/app'
 
 
