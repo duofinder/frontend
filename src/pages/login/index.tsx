@@ -1,21 +1,15 @@
 import React, { useEffect, useState } from "react"
 import Link from "next/link"
-
-interface IFormFields {
-    email: string;
-    password: string;
-}
+import { UserAuthInput } from "@/types/login"
 
 export default function Login(){
-
     const [error, setError] = useState<boolean>(false)
-    const [formFields, setFormFields] = useState<IFormFields>({
+    const [formFields, setFormFields] = useState<UserAuthInput>({
         email: '',
         password: ''
     })
 
     const onLoginSubmit = () => {
-        
         if(!formFields.password || !formFields.email){
             setError(true)
             return;
@@ -25,8 +19,6 @@ export default function Login(){
             email: formFields.email,
             password: formFields.password
         }
-
-
     }
 
     return (
