@@ -28,9 +28,9 @@ export default function Signup(){
         },
         {
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
             }
-        } ).catch(err => {
+        }).catch(err => {
             // do something
         })
 
